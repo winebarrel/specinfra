@@ -15,7 +15,7 @@ class Specinfra::Command::Suse::Base::Package < Specinfra::Command::Linux::Base:
     end
 
     def get_version(package, opts=nil)
-      "rpm -qi #{package} | grep Version | awk '{print $3}'"
+      "rpm -qi #{package} | grep ^Version | awk '{print $3}'"
     end
   end
 end
